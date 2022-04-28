@@ -30,16 +30,16 @@ namespace ProductSearch.Platform.ComputedFields
 
             GroupedDroplistField CategoryField = item.Fields[Templates.Fields.CategoryFieldId];
 
-            GroupedDroplistField MaterialGroupField = item.Fields[Templates.Fields.AllergyFieldId];
+            GroupedDroplistField AllergyField = item.Fields[Templates.Fields.AllergyFieldId];
 
-            GroupedDroplistField BrandField = item.Fields[Templates.Fields.IngredientsFieldId];
+            GroupedDroplistField IngredientField = item.Fields[Templates.Fields.IngredientsFieldId];
             
 
             StringCollection categories = new StringCollection
             {
-                MaterialGroupField?.Value?.ToLower(),
+                AllergyField?.Value?.ToLower(),
                 CategoryField?.Value?.ToLower(),
-                BrandField?.Value?.ToLower()
+                IngredientField?.Value?.ToLower()
                 
             };
             string.Join(" ", categories);
